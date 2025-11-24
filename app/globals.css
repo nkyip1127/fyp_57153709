@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* React Flow styles */
+.react-flow__node {
+  cursor: grab;
+}
+
+.react-flow__node:active {
+  cursor: grabbing;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: #ff6b6b;
+  stroke-width: 3;
+}
+
+/* Position React Flow Controls higher to avoid overlap with Undo/Redo */
+.react-flow__controls {
+  bottom: 80px !important;
+  left: 10px !important;
+}
+
+/* Ensure tooltips for bottom controls appear above */
+.react-flow__controls button[title] {
+  position: relative;
+}
+
+/* Adjust MiniMap position if needed */
+.react-flow__minimap {
+  bottom: 10px;
+  right: 10px;
+}
+
+
